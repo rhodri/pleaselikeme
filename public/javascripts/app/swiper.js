@@ -27,8 +27,11 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
 
   var afterPortrait = afterChange(function () {
     var newIdx = model.idx() + 1;
-    if (newIdx >= names.length)
-    model.idx(newIdx);
+    if (newIdx < names.length) model.idx(newIdx);
+    else {
+      model.special('submit');
+      elem.slick('unslick');
+    }
   });
 
   function slickElem(cssSelector) {

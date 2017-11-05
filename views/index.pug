@@ -8,7 +8,17 @@ block content
       div(class="col-sm-6")
 
         div(class="swiper")
-          div(class="slide portrait") Welcome to #[span(data-bind="text: name")]
-          div(class="slide") Blah blah blah
+
+          div(class="slide intro", data-bind="css: { intro: intro(), portrait: !intro() }")
+
+            // ko if: intro
+            | Welcome to #{title}
+            // /ko
+            
+            // ko ifnot: intro
+            | Hiya #[span(data-bind="text: name")]
+            // /ko
+
+          div(class="slide")
 
       div(class="col-sm-3")

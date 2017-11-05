@@ -1,11 +1,11 @@
 define(["jquery", "slick", "knockout"], function ($, slick, ko) {
   
   var names = ['jimmy', 'vievenog']
-  var elem, model;
+  var elem, model, choices, onComplete;
 
   function onSwipe(e, slick, direction) {
     console.log(direction);
-    // TODO: record swipe
+    choices[model.name()] = direction === 'right' ? true : false;
   }
 
   function afterChange(updateFn) {
@@ -31,6 +31,7 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
     else {
       model.special('submit');
       elem.slick('unslick');
+      onComplete(choices);
     }
   });
 
@@ -61,10 +62,13 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
   }
 
   return {
-    init: function(cssSelector) {
+    init: function(cssSelector, fn) {
 
       model = createModel();
       ko.applyBindings(model);
+
+      choices = {};
+      onComplete = fn;
 
       elem = slickElem(cssSelector);
       elem.on('afterChange', afterIntro);

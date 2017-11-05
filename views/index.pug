@@ -18,7 +18,12 @@ block content
             // /ko
 
             // ko if: special() === "submit"
-            p Thanks for making your selections!
+            p Thanks for making your selections! Please fill in yer email below and we'll pass it on to your selected matches...
+            form(method="POST", action="/choices")
+              div(class="input-group")
+                input(type="email", class="form-control", name="email", placeholder="Enter email", data-bind="value: email")
+                span(class="input-group-btn")
+                  button(type="submit", class="btn btn-primary") Submit
             // /ko
 
             // ko ifnot: special

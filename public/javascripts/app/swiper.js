@@ -31,7 +31,6 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
     else {
       model.special('submit');
       elem.slick('unslick');
-      onComplete(choices);
     }
   });
 
@@ -58,17 +57,18 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
       return '/images/portraits/' + self.name() + '.jpg';
     });
 
+    self.email = ko.observable();
+
     return self;
   }
 
   return {
-    init: function(cssSelector, fn) {
+    init: function(cssSelector) {
 
       model = createModel();
       ko.applyBindings(model);
 
       choices = {};
-      onComplete = fn;
 
       elem = slickElem(cssSelector);
       elem.on('afterChange', afterIntro);

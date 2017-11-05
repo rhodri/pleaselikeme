@@ -2,7 +2,7 @@ extends layout
 
 block content
   div(class="container")
-    h1(class="display-1")= title
+    h1(class="display-4")= title
     div(class="row")
       div(class="col-sm-3")
       div(class="col-sm-6")
@@ -12,9 +12,11 @@ block content
           div(class="slide intro", data-bind="css: { intro: intro(), portrait: !intro() }")
 
             // ko if: intro
-            | Welcome to #{title}
+            p Now's your chance to choose which of the people behind the portraits you'd like to know more about.
+            p Just like that popular dating app, you can #[strong swipe left] to #[strong ignore] a portrait, and #[strong swipe right] to #[strong like] a portrait.
+            p Swipe either way on this intro to begin!
             // /ko
-            
+
             // ko ifnot: intro
             | Hiya #[span(data-bind="text: name")]
             // /ko

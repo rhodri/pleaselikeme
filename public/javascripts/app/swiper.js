@@ -1,6 +1,6 @@
 define(["jquery", "slick", "knockout"], function ($, slick, ko) {
   
-  var names = ['john', 'jack']
+  var names = ['jimmy', 'vievenog']
   var elem, model;
 
   function onSwipe(e, slick, direction) {
@@ -49,7 +49,7 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
       return names[self.idx()];
     })
     self.imgUrl = ko.computed(function () {
-      return '/images/' + self.name() + '.jpg';
+      return '/images/portraits/' + self.name() + '.jpg';
     });
 
     return self;

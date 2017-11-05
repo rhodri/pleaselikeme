@@ -18,7 +18,8 @@ block content
             // /ko
 
             // ko ifnot: intro
-            | Hiya #[span(data-bind="text: name")]
+            img(class="img-fluid" data-bind="attr: { src: imgUrl }")
+            p(class="h2 name", data-bind="text: name")
             // /ko
 
           div(class="slide")

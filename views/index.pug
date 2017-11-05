@@ -9,15 +9,15 @@ block content
 
         div(class="swiper")
 
-          div(class="slide intro", data-bind="css: { intro: intro(), portrait: !intro() }")
+          div(class="slide intro", data-bind="css: { intro: special() === 'intro', portrait: !special() }")
 
-            // ko if: intro
+            // ko if: special() === "intro"
             p Now's your chance to choose which of the people behind the portraits you'd like to know more about.
             p Just like that popular dating app, you can #[strong swipe left] to #[strong ignore] a portrait, and #[strong swipe right] to #[strong like] a portrait.
             p Swipe either way on this intro to begin!
             // /ko
 
-            // ko ifnot: intro
+            // ko ifnot: special
             img(class="img-fluid" data-bind="attr: { src: imgUrl }")
             p(class="h2 name", data-bind="text: name")
             // /ko

@@ -19,14 +19,16 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
   }
 
   var afterIntro = afterChange(function () {
-    model.intro(false);
+    model.special(null);
     elem.off('afterChange', afterIntro);
     elem.on('swipe', onSwipe);
     elem.on('afterChange', afterPortrait);
   });
 
   var afterPortrait = afterChange(function () {
-    model.idx(model.idx() + 1);
+    var newIdx = model.idx() + 1;
+    if (newIdx >= names.length)
+    model.idx(newIdx);
   });
 
   function slickElem(cssSelector) {
@@ -42,7 +44,7 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
 
     var self = {};
 
-    self.intro = ko.observable(true);
+    self.special = ko.observable('intro');
     self.idx = ko.observable(0);
 
     self.name = ko.computed(function () {

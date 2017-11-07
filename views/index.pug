@@ -9,7 +9,7 @@ block content
 
         div(class="swiper")
 
-          div(class="slide intro", data-bind="css: { intro: special() === 'intro', submit: special() === 'submit', portrait: !special() }")
+          div(class="slide", data-bind="css: { intro: special() === 'intro', submit: special() === 'submit', portrait: !special() }")
 
             // ko if: special() === "intro"
             p Now's your chance to choose which of the people behind the portraits you'd like to know more about.
@@ -31,6 +31,6 @@ block content
             p(class="h2 name", data-bind="text: name")
             // /ko
 
-          div(class="slide")
+          div(class="slide hidden")
 
       div(class="col-sm-3")

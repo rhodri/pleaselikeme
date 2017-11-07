@@ -3,21 +3,16 @@ h1.display-4 {
   text-align: center; }
 
 .slide {
-  padding: 30px; }
+  padding: 30px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  border: 2px solid slategrey; }
 
-.portrait {
-  background: blue;
-  color: white; }
-  .portrait .name {
-    margin-top: 10px;
-    text-transform: capitalize; }
+.hidden {
+  visibility: hidden; }
 
-.intro {
-  background: purple;
-  color: white; }
-
-.submit {
-  background: red;
-  color: white; }
+.portrait .name {
+  margin-top: 10px;
+  text-transform: capitalize; }
 
 /*# sourceMappingURL=style.css.map */

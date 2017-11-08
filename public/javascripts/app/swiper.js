@@ -1,6 +1,6 @@
 define(["jquery", "slick", "knockout"], function ($, slick, ko) {
   
-  var names = ['jimmy', 'vievenog']
+  var names = ['jimmy', 'vievenog', 'jasper']
   var elem, model, choices, onComplete;
 
   function onSwipe(e, slick, direction) {
@@ -31,6 +31,7 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
     else {
       model.special('submit');
       elem.slick('unslick');
+      model.choices(JSON.stringify(choices));
     }
   });
 
@@ -58,6 +59,7 @@ define(["jquery", "slick", "knockout"], function ($, slick, ko) {
     });
 
     self.email = ko.observable();
+    self.choices = ko.observable();
 
     return self;
   }

@@ -22,6 +22,7 @@ block content
             form(method="POST", action="/choices")
               div(class="input-group")
                 input(type="email", class="form-control", name="email", placeholder="Enter email", data-bind="value: email")
+                input(type="hidden", name="choices", data-bind="value: choices")
                 span(class="input-group-btn")
                   button(type="submit", class="btn btn-primary") Submit
             // /ko

@@ -6,7 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 
+var db = require('./helper/db');
+
 var index = require('./routes/index');
+
+db.connect();
 
 var app = express();
 

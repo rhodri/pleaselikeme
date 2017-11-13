@@ -1,6 +1,6 @@
 define(["jquery", "slick", "knockout"], function ($, slick, ko) {
   
-  var names = ['jimmy', 'vievenog', 'jasper']
+  var names = ['tom', 'jimmy', 'marlana', 'jeanna', 'lucy', 'ruby', 'james', 'rosemary', 'thomas', 'vievenog']
   var elem, model, choices, onComplete;
 
   function onSwipe(e, slick, direction) {
